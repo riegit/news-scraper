@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<title>New York Times Scraper</title>
+</head>
+
+<body>
+	<header>
+		<a href="/">
+			<div id="sitename">Mongo Scraper</div>
+		</a>
+		<a href="/">
+			<button id="all-articles">All Articles</button>
+		</a>
+		<a href="/saved">
+			<button id="saved-articles">Saved Articles</button>
+		</a>
+		<form action="/scrape" method="GET">
+			<button type="submit" id="scrape-articles">Scrape Articles</button>
+		</form>
+	</header>
+	<img id="cover" src="/assets/images/newsimage.jpg">
+	<div id="container">
+		{{{ body }}}
+	</div>
+
+	<script src="/assets/js/app.js"></script>
+
+	<div id="addnote">
+		<div id="notewindow">
+			<h2>Note</h2>
+			<h3>Article:
+				<span id="article-title"></span>
+			</h3>
+			<div id="note">
+				<label for="note-body">Note</label>
+				<br>
+				<textarea rows="5" placeholder="" id="note-body"></textarea>
+				<br>
+				<button type="submit" id="add-note">Save Note</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="/assets/js/app.js"></script>
+</body>
+
+</html>
