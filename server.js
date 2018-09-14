@@ -14,9 +14,10 @@ var request = require("request");
 var Note = require("./models/Note");
 var Article = require("./models/Article");
 var databaseUrl = "mongodb://localhost/mongoscraper";
+var keys = require("./config/keys");
 
 if (process.env.MONGODB_URI) {
-  mongoose.connect(process.env.MONGODB_URI);
+  mongoose.connect(keys.mongodb.dbURI);
 } else {
   mongoose.connect(
     databaseUrl,
