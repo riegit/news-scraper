@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  line-height: 200%;
+}
+
+body {
+  background-color: #eee;
+}
+
+button {
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+header form {
+  display: inline;
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 70px;
+  opacity: 0.9;
+}
+
+header button {
+  float: left;
+  font-size: 20px;
+  color: #fff;
+  height: 100%;
+  min-width: 150px;
+  padding: 0 15px;
+}
+
+#all-articles {
+  background-color: #d38731;
+}
+
+#saved-articles {
+  background-color: #d38731;
+}
+
+#scrape-articles {
+  background-color: #d38731;
+}
+
+#all-articles:hover,
+#saved-articles:hover,
+#scrape-articles:hover {
+  background-color: #d8b17f;
+  opacity: 0.9;
+}
+
+#sitename {
+  float: left;
+  padding: 15px 11px;
+  height: 100%;
+  background-color: #d38731;
+  font-size: 23px;
+  font-weight: bold;
+  color: #fff;
+  opacity: 0.9;
+}
+
+#cover {
+  width: 100%;
+}
+
+.story-body {
+  margin: auto;
+  width: 95%;
+  min-height: 200px;
+  box-shadow: 0 0 10px #aaa;
+  background-color: #fff;
+}
+
+.story-body h2 {
+  background-color: #d38731;
+}
+
+.story-body a {
+  float: left;
+  display: block;
+  width: 77%;
+  color: #fff;
+  padding-left: 10px;
+}
+
+.story-body button {
+  display: inline;
+  min-width: 128px;
+  background-color: #d38731;
+  color: #fff;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.story-body button:hover {
+  background-color: #eeb87a;
+  box-shadow: 0 0 10px #fff;
+}
+
+.story-body summary {
+  float: left;
+  width: 80%;
+  padding: 0px 20px;
+}
+
+.message {
+  margin: auto;
+  text-align: center;
+  color: rgb(65, 59, 59);
+}
+
+#addnote {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 4;
+}
+
+#note {
+  padding: 0 20px 20px 20px;
+}
+
+#notewindow {
+  width: 400px;
+  background-color: #fff;
+  z-index: 5;
+}
+
+#notewindow h2 {
+  background-color: #d38731;
+  color: #fff;
+  padding: 0 20px;
+  margin: 0;
+}
+
+#notewindow h3 {
+  padding: 0 20px;
+  margin: 0;
+  color: #d38731;
+}
+
+#notewindow label {
+  color: #aaa;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#notewindow button {
+  min-width: 128px;
+  background-color: #d38731;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+
+#notewindow button:hover {
+  background-color: #eeb87a;
+  box-shadow: 0 0 10px #fff;
+}
+
+#note-body {
+  width: 100%;
+  padding: 5px;
+  font-size: 15px;
+}
+
+#container {
+  margin-bottom: 200px;
+}
