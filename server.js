@@ -58,7 +58,7 @@ app.get("/", function(req, res) {
     if (data.length === 0) {
       res.render("placeholder", {
         message:
-          'There\'s no news yet. Please click "Scrape Articles" to populate news.'
+          'Looks like we don\'t have any new articles yet. Click on "Scrape Articles" to populate news.'
       });
     } else {
       res.render("index", { articles: data });
@@ -104,6 +104,51 @@ app.get("/scrape", function(req, res) {
     });
     console.log("Scrape finished.");
     res.redirect("/");
+  });
+});
+
+app.get("/saved", function(req, res) {
+  Article.find({ issaved: true }, null, { sort: { created: -1 } }, function(
+    err,
+    data
+  ) {
+    if (data.length === 0) {
+      res.render("placeholder", {
+        message: 'There\'s no saved news. Click "Save Article"!'
+      });
+    } else {
+      res.render("saved", { saved: data });
+    }
+  });
+});
+
+app.get("/:id", function(req, res) {
+  Article.findById(req.params.id, function(err, data) {
+    res.json(data);
+  });
+});
+
+app.post("/save/:id", function(req, res) {
+  Article.findById(req.params.id, function(err, data) {
+    if (data.issaved) {
+      Article.findByIdAndUpdate(
+        req.params.id,
+        { $set: { issaved: false, status: "Save Article" } },
+        { new: true },
+        function(err, data) {
+          res.redirect("/");
+        }
+      );
+    } else {
+      Article.findByIdAndUpdate(
+        req.params.id,
+        { $set: { issaved: true, status: "Saved" } },
+        { new: true },
+        function(err, data) {
+          res.redirect("/saved");
+        }
+      );
+    }
   });
 });
 
