@@ -17,7 +17,7 @@ var databaseUrl = "mongodb://localhost/mongoscraper";
 var keys = require("./config/keys");
 
 if (process.env.MONGODB_URI) {
-  mongoose.connect(keys.mongodb.dbURI);
+  mongoose.connect(process.env.MONGODB_URI);
 } else {
   mongoose.connect(
     databaseUrl,
